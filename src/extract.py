@@ -8,7 +8,6 @@ load_dotenv()
 
 API_URL = "https://api.restcountries.com/countries/v5"
 
-
 def fetch_all():
     api_key = os.getenv("RESTCOUNTRIES_API_KEY")
     headers = {"Authorization": f"Bearer {api_key}"}
@@ -45,7 +44,6 @@ def _join_dict_values(items, key):
     """Join one key from a list of dicts with '|' and return (joined_string, count)."""
     values = [item.get(key, "") for item in (items or []) if isinstance(item, dict)]
     return "|".join(values), len(values)
-
 
 def flatten(countries_data):
     rows = []
@@ -118,5 +116,6 @@ if __name__ == "__main__":
     countries = fetch_all()
     save_raw_json(countries)
     df = flatten(countries)
-    df.to_csv(os.path.join("data", "raw", "countries_flat.csv"), index=False, encoding="utf-8-sig")
+    
+    df.to_csv("data/raw/countries_flat.csv", index=False, encoding="utf-8-sig")
     print(f"Saved {len(df)} rows and {df.shape[1]} columns")
