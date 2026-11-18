@@ -48,3 +48,7 @@ df_outliers_pop = df[(df["population"] > upperBoundary_pop) | (df["population"] 
 
 print("Outliers in area_km2:", len(df_outliers_area))
 print("Outliers in population:", len(df_outliers_pop))
+
+print("\n8. SUSPICIOUS VALUES")
+print("Population == 0:", (df["population"] == 0).sum())
+print("Area <= 0:", (df["area_km2"] <= 0).sum())
