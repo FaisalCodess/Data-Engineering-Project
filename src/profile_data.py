@@ -24,7 +24,7 @@ print("5. SUMMARY STATISTICS")
 print(df.describe(), "\n")
 
 print("6. REGION COUNTS")
-print(df["region"].value_counts(dropna=False), "\n")
+print(df["region"].value_counts(), "\n")
 
 print("7. OUTLIERS")
 Q1_area = df["area_km2"].quantile(0.25)

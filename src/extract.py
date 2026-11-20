@@ -33,10 +33,10 @@ def fetch_all():
     return all_countries
 
 def save_raw_json(data):
-    output_dir = os.path.join("data", "raw")
+    output_dir = os.path.join("data", "raw") # data/raw/
     os.makedirs(output_dir, exist_ok=True)
     
-    file_path = os.path.join(output_dir, "countries_raw.json")
+    file_path = os.path.join(output_dir, "countries_raw.json") # data/raw/countries_raw.json
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
