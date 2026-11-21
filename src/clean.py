@@ -87,5 +87,5 @@ if __name__ == "__main__":
     print(f"Saved {len(df)} rows, {df.shape[1]} columns -> {CLEAN_PATH}")
     print(f"gini imputed:        {int(df['gini_imputed'].sum())} rows")
     print(f"gini still missing:  {int(df['gini'].isnull().sum())} rows")
-    print(f"synthetic alpha3:    {int(df['code_is_synthetic'].sum())} rows")
+    print(f"synthetic alpha3:    {int(df['alpha3_is_synthetic'].sum())} rows")
     print(f"alpha2 still empty:  {int(df['alpha2'].isnull().sum())} rows")
