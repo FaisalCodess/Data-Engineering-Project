@@ -43,7 +43,7 @@ def fill_alpha2(df):
 
 
 def fill_alpha3(df):
-    df["code_is_synthetic"] = df["alpha3"].isnull()
+    df["alpha3_is_synthetic"] = df["alpha3"].isnull()
     for i in df.index[df["alpha3"].isnull()]:
         name = df.loc[i, "name_common"]
         df.loc[i, "alpha3"] = CODE_OVERRIDES.get(name, make_code(name))

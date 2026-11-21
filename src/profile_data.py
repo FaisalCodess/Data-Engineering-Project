@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("data/raw/countries_flat.csv")
+df = pd.read_csv("data/raw/countries_flat.csv", keep_default_na=False, na_values=[""])
 
 print("1. SHAPE")
 print(f"{df.shape[0]} rows, {df.shape[1]} columns\n")
